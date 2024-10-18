@@ -1,8 +1,8 @@
-const express = require('express');
-const router = express.Router();
-const teamsRouter = require('./teams/teams');
-const playersRouter = require('./players/players');
-const { getData } = require('../utils/dataOperations');
+import { Router } from 'express';
+const router = Router();
+import teamsRouter from './teams/teams.js';
+import playersRouter from './players/players.js';
+import { getData } from '../utils/dataOperations.js';
 
 router.get('/', (req, res) => {
   const data = getData();
@@ -26,4 +26,4 @@ router.get('/', (req, res) => {
 router.use('/teams', teamsRouter);
 router.use('/players', playersRouter);
 
-module.exports = router;
+export default router;

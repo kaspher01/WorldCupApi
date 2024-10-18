@@ -1,15 +1,17 @@
-const fs = require('fs');
-const path = require('path');
+import { readFileSync, writeFileSync } from 'fs';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
 
-const dataPath = path.join(__dirname, '..', 'data', 'worldcup.json');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-const getData = () => {
-  const data = fs.readFileSync(dataPath);
+const dataPath = join(__dirname, '..', 'data', 'worldcup.json');
+
+export const getData = () => {
+  const data = readFileSync(dataPath);
   return JSON.parse(data);
 };
 
-const writeData = (data) => {
-  fs.writeFileSync(dataPath, JSON.stringify(data, null, 2));
+export const writeData = (data) => {
+  writeFileSync(dataPath, JSON.stringify(data, null, 2));
 };
-
-module.exports = { getData, writeData };

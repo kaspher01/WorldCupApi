@@ -1,6 +1,7 @@
-const express = require('express');
-const router = express.Router();
-const { getData, writeData } = require('../../utils/dataOperations');
+import { Router } from 'express';
+const router = Router();
+import { getData, writeData } from '../../utils/dataOperations.js';
+
 
 router.get('/:year/:playerId', (req, res) => {
   const { year, playerId } = req.params;
@@ -61,4 +62,4 @@ router.delete('/:year/:playerId', (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;
