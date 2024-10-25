@@ -2,6 +2,9 @@ import { Router } from 'express';
 const router = Router();
 import { getData, writeData } from '../../utils/dataOperations.js';
 import { teamIdExists, isPlayerValid } from '../../utils/validators.js';
+import { checkHeaders } from '../../middleware/headers.js';
+
+router.use(checkHeaders);
 
 /**
  * @swagger
@@ -19,6 +22,23 @@ import { teamIdExists, isPlayerValid } from '../../utils/validators.js';
  *         schema:
  *           type: integer
  *         description: The year of the World Cup to filter teams
+ *       - in: header
+ *         name: Content-Type
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Must be application/json
+ *       - in: header
+ *         name: X-Rate-Limit
+ *         schema:
+ *           type: integer
+ *         description: Limit of requests per user
+ *       - in: header
+ *         name: X-Request-ID
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Unique request identifier for tracing
  *     responses:
  *       200:
  *         description: Teams retrieved successfully
@@ -43,6 +63,24 @@ import { teamIdExists, isPlayerValid } from '../../utils/validators.js';
  *     tags: [Teams]
  *     summary: Create a new team
  *     description: Add a new team to the list.
+ *     parameters:
+ *       - in: header
+ *         name: Content-Type
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Must be application/json
+ *       - in: header
+ *         name: X-Rate-Limit
+ *         schema:
+ *           type: integer
+ *         description: Limit of requests per user
+ *       - in: header
+ *         name: X-Request-ID
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Unique request identifier for tracing
  *     requestBody:
  *       description: Team object to create
  *       required: true
@@ -96,6 +134,23 @@ import { teamIdExists, isPlayerValid } from '../../utils/validators.js';
  *           type: integer
  *         required: true
  *         description: The ID of the team
+ *       - in: header
+ *         name: Content-Type
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Must be application/json
+ *       - in: header
+ *         name: X-Rate-Limit
+ *         schema:
+ *           type: integer
+ *         description: Limit of requests per user
+ *       - in: header
+ *         name: X-Request-ID
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Unique request identifier for tracing
  *     responses:
  *       200:
  *         description: A team object
@@ -125,6 +180,23 @@ import { teamIdExists, isPlayerValid } from '../../utils/validators.js';
  *           type: integer
  *         required: true
  *         description: The ID of the team
+ *       - in: header
+ *         name: Content-Type
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Must be application/json
+ *       - in: header
+ *         name: X-Rate-Limit
+ *         schema:
+ *           type: integer
+ *         description: Limit of requests per user
+ *       - in: header
+ *         name: X-Request-ID
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Unique request identifier for tracing
  *     requestBody:
  *       description: Updated team object
  *       required: true
@@ -168,6 +240,23 @@ import { teamIdExists, isPlayerValid } from '../../utils/validators.js';
  *           type: integer
  *         required: true
  *         description: The ID of the team
+ *       - in: header
+ *         name: Content-Type
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Must be application/json
+ *       - in: header
+ *         name: X-Rate-Limit
+ *         schema:
+ *           type: integer
+ *         description: Limit of requests per user
+ *       - in: header
+ *         name: X-Request-ID
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Unique request identifier for tracing
  *     responses:
  *       200:
  *         description: Team deleted successfully
@@ -186,6 +275,23 @@ import { teamIdExists, isPlayerValid } from '../../utils/validators.js';
  *           type: integer
  *         required: true
  *         description: The ID of the team
+ *       - in: header
+ *         name: Content-Type
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Must be application/json
+ *       - in: header
+ *         name: X-Rate-Limit
+ *         schema:
+ *           type: integer
+ *         description: Limit of requests per user
+ *       - in: header
+ *         name: X-Request-ID
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Unique request identifier for tracing
  *     responses:
  *       200:
  *         description: Players for the team
@@ -205,6 +311,7 @@ import { teamIdExists, isPlayerValid } from '../../utils/validators.js';
  *       404:
  *         description: Team or players not found
  */
+
 router.get('/', (req, res) => {
   const { year } = req.query;
   const data = getData();
@@ -326,7 +433,6 @@ router.put('/:teamId', (req, res) => {
 
   res.json({ message: 'Team updated successfully', team: allTeams[teamIndex] });
 });
-
 
 router.delete('/:teamId', (req, res) => {
   const { teamId } = req.params;
