@@ -23,9 +23,10 @@ router.use(checkHeaders);
  *           type: integer
  *         description: The year of the World Cup to filter teams
  *       - in: header
- *         name: Content-Type
+ *         name: Accept
  *         schema:
  *           type: string
+ *           default: application/json
  *         required: true
  *         description: Must be application/json
  *       - in: header
@@ -37,7 +38,6 @@ router.use(checkHeaders);
  *         name: X-Request-ID
  *         schema:
  *           type: string
- *         required: true
  *         description: Unique request identifier for tracing
  *     responses:
  *       200:
@@ -65,9 +65,10 @@ router.use(checkHeaders);
  *     description: Add a new team to the list.
  *     parameters:
  *       - in: header
- *         name: Content-Type
+ *         name: Accept
  *         schema:
  *           type: string
+ *           default: application/json
  *         required: true
  *         description: Must be application/json
  *       - in: header
@@ -79,7 +80,6 @@ router.use(checkHeaders);
  *         name: X-Request-ID
  *         schema:
  *           type: string
- *         required: true
  *         description: Unique request identifier for tracing
  *     requestBody:
  *       description: Team object to create
@@ -135,9 +135,10 @@ router.use(checkHeaders);
  *         required: true
  *         description: The ID of the team
  *       - in: header
- *         name: Content-Type
+ *         name: Accept
  *         schema:
  *           type: string
+ *           default: application/json
  *         required: true
  *         description: Must be application/json
  *       - in: header
@@ -149,7 +150,6 @@ router.use(checkHeaders);
  *         name: X-Request-ID
  *         schema:
  *           type: string
- *         required: true
  *         description: Unique request identifier for tracing
  *     responses:
  *       200:
@@ -181,9 +181,10 @@ router.use(checkHeaders);
  *         required: true
  *         description: The ID of the team
  *       - in: header
- *         name: Content-Type
+ *         name: Accept
  *         schema:
  *           type: string
+ *           default: application/json
  *         required: true
  *         description: Must be application/json
  *       - in: header
@@ -195,7 +196,6 @@ router.use(checkHeaders);
  *         name: X-Request-ID
  *         schema:
  *           type: string
- *         required: true
  *         description: Unique request identifier for tracing
  *     requestBody:
  *       description: Updated team object
@@ -241,9 +241,10 @@ router.use(checkHeaders);
  *         required: true
  *         description: The ID of the team
  *       - in: header
- *         name: Content-Type
+ *         name: Accept
  *         schema:
  *           type: string
+ *           default: application/json
  *         required: true
  *         description: Must be application/json
  *       - in: header
@@ -255,7 +256,6 @@ router.use(checkHeaders);
  *         name: X-Request-ID
  *         schema:
  *           type: string
- *         required: true
  *         description: Unique request identifier for tracing
  *     responses:
  *       200:
@@ -276,9 +276,10 @@ router.use(checkHeaders);
  *         required: true
  *         description: The ID of the team
  *       - in: header
- *         name: Content-Type
+ *         name: Accept
  *         schema:
  *           type: string
+ *           default: application/json
  *         required: true
  *         description: Must be application/json
  *       - in: header
@@ -290,7 +291,6 @@ router.use(checkHeaders);
  *         name: X-Request-ID
  *         schema:
  *           type: string
- *         required: true
  *         description: Unique request identifier for tracing
  *     responses:
  *       200:

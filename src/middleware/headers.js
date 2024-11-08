@@ -1,10 +1,10 @@
 export const checkHeaders = (req, res, next) => {
     const errors = [];
-  
-    const contentType = req.get("Content-Type");
+
+    const contentType = req.get("accept");
+
     if (contentType !== "application/json") {
-        errors.push(contentType);
-      errors.push("Content-Type must be application/json");
+      errors.push("Accept header must be application/json");
     }
   
     const rateLimit = req.get("X-Rate-Limit");
@@ -18,7 +18,7 @@ export const checkHeaders = (req, res, next) => {
     }
   
     if (errors.length > 0) {
-      return res.status(404).json({ message: "Header validation errors", errors });
+      return res.status(400).json({ message: "Header validation errors", errors });
     }
   
     next();

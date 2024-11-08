@@ -17,9 +17,10 @@ router.use(checkHeaders);
  *     description: Retrieve a list of all players with unique names across all World Cups.
  *     parameters:
  *       - in: header
- *         name: Content-Type
+ *         name: Accept
  *         schema:
  *           type: string
+ *           default: application/json
  *         required: true
  *         description: Must be application/json
  *       - in: header
@@ -72,7 +73,7 @@ router.use(checkHeaders);
  *         required: true
  *         description: The ID of the player
  *       - in: header
- *         name: Content-Type
+ *         name: Accept
  *         schema:
  *           type: string
  *         required: true
@@ -126,7 +127,7 @@ router.use(checkHeaders);
  *         required: true
  *         description: The ID of the player
  *       - in: header
- *         name: Content-Type
+ *         name: Accept
  *         schema:
  *           type: string
  *         required: true
@@ -181,7 +182,7 @@ router.use(checkHeaders);
  *         required: true
  *         description: The ID of the player
  *       - in: header
- *         name: Content-Type
+ *         name: Accept
  *         schema:
  *           type: string
  *         required: true
@@ -195,7 +196,6 @@ router.use(checkHeaders);
  *         name: X-Request-ID
  *         schema:
  *           type: string
- *         required: true
  *         description: Unique request identifier for tracing
  *     responses:
  *       200:
@@ -278,7 +278,7 @@ router.delete('/:playerId', (req, res) => {
     if (team) {
       team.players = team.players.filter(p => p.id !== parseInt(playerId, 10));
       writeData(data);
-      res.json({ message: 'Player deleted successfully' });
+      res.status(204).json({ message: 'Player deleted successfully' });
     } else {
       res.status(404).json({ message: 'Player not found' });
     }

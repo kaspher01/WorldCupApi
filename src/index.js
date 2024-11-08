@@ -1,15 +1,15 @@
 import express, { json } from 'express';
-import worldCupRoutes from './routes/worldCupRoutes.js';
-import swaggerSetup from './config/swagger.js';
+import registerRoutes from './routes/routesManager.js';
 
 const app = express();
 const PORT = 3000;
 
 app.use(json());
-app.use('/api', worldCupRoutes);
 
-swaggerSetup(app);
+registerRoutes(app);
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
+export default app;
