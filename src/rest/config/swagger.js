@@ -18,7 +18,7 @@ const swaggerDefinition = {
 
 const options = {
   swaggerDefinition,
-  apis: ['./src/routes/worldCups/*.js', './src/routes/teams/*.js', './src/routes/players/*.js'], 
+  apis: ['./src/rest/routes/worldCups/*.js', './src/rest/routes/teams/*.js', './src/rest/routes/players/*.js'], 
 };
 
 const swaggerSpec = swaggerJsdoc(options);

@@ -10,10 +10,6 @@ const registerRoutes = (app) => {
   app.use('/api/players', checkHeaders, playersRouter);
   app.use('/api/teams', checkHeaders, teamsRouter);
   app.use('/api/worldcups', checkHeaders, worldCupsRouter);
-
-  app.get('/', (req, res) => {
-    res.send('Welcome to the World Cup API');
-  });
 };
 
 export default registerRoutes;
