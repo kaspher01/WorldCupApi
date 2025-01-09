@@ -1,0 +1,309 @@
+{
+  "WorldCups": [
+    {
+      "year": 2014,
+      "host": "Brazil",
+      "teams": [
+        {
+          "id": 1,
+          "name": "Germany",
+          "group": "G",
+          "players": [
+            {
+              "id": 1,
+              "name": "Miroslav Klose",
+              "position": "Forward",
+              "age": 36,
+              "club": "Lazio"
+            },
+            {
+              "id": 2,
+              "name": "Manuel Neuer",
+              "position": "Goalkeeper",
+              "age": 28,
+              "club": "Bayern Munich"
+            },
+            {
+              "id": 3,
+              "name": "Philipp Lahm",
+              "position": "Defender",
+              "age": 30,
+              "club": "Bayern Munich"
+            },
+            {
+              "id": 4,
+              "name": "Bastian Schweinsteiger",
+              "position": "Midfielder",
+              "age": 29,
+              "club": "Bayern Munich"
+            },
+            {
+              "id": 5,
+              "name": "Thomas Muller",
+              "position": "Forward",
+              "age": 24,
+              "club": "Bayern Munich"
+            },
+            {
+              "id": 23,
+              "name": "New Player",
+              "position": "Forward",
+              "age": 25,
+              "club": "Some Club"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Argentina",
+          "group": "F",
+          "players": [
+            {
+              "id": 6,
+              "name": "Lionel Messi",
+              "position": "Forward",
+              "age": 27,
+              "club": "Barcelona"
+            },
+            {
+              "id": 7,
+              "name": "Javier Mascherano",
+              "position": "Midfielder",
+              "age": 30,
+              "club": "Barcelona"
+            },
+            {
+              "id": 8,
+              "name": "Angel Di Maria",
+              "position": "Midfielder",
+              "age": 26,
+              "club": "Real Madrid"
+            },
+            {
+              "id": 9,
+              "name": "Sergio Aguero",
+              "position": "Forward",
+              "age": 26,
+              "club": "Manchester City"
+            },
+            {
+              "id": 10,
+              "name": "Ezequiel Garay",
+              "position": "Defender",
+              "age": 28,
+              "club": "Zenit Saint Petersburg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2018,
+      "host": "Russia",
+      "teams": [
+        {
+          "id": 3,
+          "name": "France",
+          "group": "C",
+          "players": [
+            {
+              "id": 11,
+              "name": "Kylian Mbappe",
+              "position": "Forward",
+              "age": 19,
+              "club": "Paris Saint-Germain"
+            },
+            {
+              "id": 12,
+              "name": "Hugo Lloris",
+              "position": "Goalkeeper",
+              "age": 31,
+              "club": "Tottenham Hotspur"
+            },
+            {
+              "id": 13,
+              "name": "N'Golo Kante",
+              "position": "Midfielder",
+              "age": 27,
+              "club": "Chelsea"
+            },
+            {
+              "id": 14,
+              "name": "Paul Pogba",
+              "position": "Midfielder",
+              "age": 25,
+              "club": "Manchester United"
+            },
+            {
+              "id": 15,
+              "name": "Raphael Varane",
+              "position": "Defender",
+              "age": 25,
+              "club": "Real Madrid"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Argentina",
+          "group": "D",
+          "players": [
+            {
+              "id": 6,
+              "name": "Lionel Messi",
+              "position": "Forward",
+              "age": 31,
+              "club": "Barcelona"
+            },
+            {
+              "id": 8,
+              "name": "Angel Di Maria",
+              "position": "Midfielder",
+              "age": 30,
+              "club": "Paris Saint-Germain"
+            },
+            {
+              "id": 16,
+              "name": "Sergio Aguero",
+              "position": "Forward",
+              "age": 30,
+              "club": "Manchester City"
+            },
+            {
+              "id": 17,
+              "name": "Nicolas Otamendi",
+              "position": "Defender",
+              "age": 30,
+              "club": "Manchester City"
+            },
+            {
+              "id": 18,
+              "name": "Javier Mascherano",
+              "position": "Midfielder",
+              "age": 34,
+              "club": "Hebei China Fortune"
+            }
+          ]
+        },
+        {
+          "id": 0,
+          "name": "string",
+          "group": "string",
+          "players": [
+            {
+              "id": 0,
+              "name": "string",
+              "position": "string",
+              "age": 0,
+              "club": "string"
+            }
+          ]
+        },
+        {
+          "id": 122,
+          "name": "string",
+          "group": "string",
+          "players": [
+            {
+              "id": 0,
+              "name": "string",
+              "position": "string",
+              "age": 0,
+              "club": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "host": "Qatar",
+      "teams": [
+        {
+          "id": 5,
+          "name": "Argentina",
+          "group": "C",
+          "players": [
+            {
+              "id": 6,
+              "name": "Lionel Messi",
+              "position": "Forward",
+              "age": 35,
+              "club": "Paris Saint-Germain"
+            },
+            {
+              "id": 19,
+              "name": "Emiliano Martinez",
+              "position": "Goalkeeper",
+              "age": 30,
+              "club": "Aston Villa"
+            },
+            {
+              "id": 8,
+              "name": "Angel Di Maria",
+              "position": "Midfielder",
+              "age": 34,
+              "club": "Benfica"
+            },
+            {
+              "id": 20,
+              "name": "Rodrigo De Paul",
+              "position": "Midfielder",
+              "age": 28,
+              "club": "Atletico Madrid"
+            },
+            {
+              "id": 21,
+              "name": "Lautaro Martinez",
+              "position": "Forward",
+              "age": 25,
+              "club": "Inter Milan"
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "name": "France",
+          "group": "D",
+          "players": [
+            {
+              "id": 11,
+              "name": "Kylian Mbappe",
+              "position": "Forward",
+              "age": 24,
+              "club": "Paris Saint-Germain"
+            },
+            {
+              "id": 12,
+              "name": "Hugo Lloris",
+              "position": "Goalkeeper",
+              "age": 37,
+              "club": "Tottenham Hotspur"
+            },
+            {
+              "id": 13,
+              "name": "N'Golo Kante",
+              "position": "Midfielder",
+              "age": 32,
+              "club": "Al-Ittihad"
+            },
+            {
+              "id": 15,
+              "name": "Raphael Varane",
+              "position": "Defender",
+              "age": 30,
+              "club": "Manchester United"
+            },
+            {
+              "id": 22,
+              "name": "Antoine Griezmann",
+              "position": "Forward",
+              "age": 33,
+              "club": "Atletico Madrid"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
