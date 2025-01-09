@@ -53,11 +53,9 @@ export class PlayerAPI {
   async createPlayer(teamId: number, input: Omit<Player, "id">) {
     await this.initialize();
 
-    // Znajdź drużynę
     for (const worldCup of this.worldCupData.WorldCups) {
       const team = worldCup.teams.find((t) => t.id === teamId);
       if (team) {
-        // Znajdź najwyższe ID wśród wszystkich graczy
         const allPlayers = this.worldCupData.WorldCups.flatMap((wc) =>
           wc.teams.flatMap((t) => t.players)
         );
@@ -87,7 +85,7 @@ export class PlayerAPI {
           team.players[playerIndex] = {
             ...team.players[playerIndex],
             ...input,
-            id, // zachowujemy oryginalne id
+            id,
           };
 
           await saveData(this.worldCupData);
@@ -121,7 +119,6 @@ export class PlayerAPI {
     let playerToTransfer: Player | null = null;
     let oldTeam: Team | null = null;
 
-    // Znajdź gracza i jego obecną drużynę
     outerLoop: for (const worldCup of this.worldCupData.WorldCups) {
       for (const team of worldCup.teams) {
         const playerIndex = team.players.findIndex((p) => p.id === playerId);
@@ -138,7 +135,6 @@ export class PlayerAPI {
       throw new Error("Player not found");
     }
 
-    // Znajdź nową drużynę i dodaj do niej gracza
     for (const worldCup of this.worldCupData.WorldCups) {
       const newTeam = worldCup.teams.find((t) => t.id === newTeamId);
       if (newTeam) {
@@ -149,7 +145,6 @@ export class PlayerAPI {
       }
     }
 
-    // Jeśli nie znaleziono nowej drużyny, przywróć gracza do starej
     oldTeam.players.push(playerToTransfer);
     throw new Error("New team not found");
   }
