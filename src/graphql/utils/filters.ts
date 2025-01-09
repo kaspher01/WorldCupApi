@@ -25,7 +25,6 @@ export const applyFilters = (data: any[], filters: Filter) => {
       const value = item[field];
       if (value === undefined) return true;
 
-      // String filters
       if (typeof value === "string") {
         if (filter.eq !== undefined) {
           return value === filter.eq;
@@ -43,7 +42,6 @@ export const applyFilters = (data: any[], filters: Filter) => {
         }
       }
 
-      // Number filters
       if (typeof value === "number") {
         if (filter.eq !== undefined) {
           return value === filter.eq;
