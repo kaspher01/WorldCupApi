@@ -1,13 +1,8 @@
-import express from "express";
-import { graphqlHTTP } from "express-graphql";
-import { schema } from "./schema";
+import { createHandler } from 'graphql-http/lib/use/express';
+import { schema } from './schema/index.js';
 
-export const graphqlApp = express.Router();
-
-graphqlApp.use(
-  "/",
-  graphqlHTTP({
-    schema,
-    graphiql: true,
-  })
-);
+export const graphqlHandler = createHandler({
+  schema,
+  context: (req) => ({
+  }),
+});
