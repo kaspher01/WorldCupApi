@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package worldcup;
+
+message PaginationRequest {
+  int32 page = 1;
+  int32 per_page = 2;
+}
+
+message FilterOptions {
+  string field = 1;
+  string value = 2;
+}
+
+message SortOptions {
+  string field = 1;
+  bool ascending = 2;
+} 

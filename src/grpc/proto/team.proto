@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package worldcup;
+
+import "common.proto";
+import "player.proto";
+
+message Team {
+  int32 id = 1;
+  string name = 2;
+  string group = 3;
+  repeated Player players = 4;
+}
+
+message GetTeamsRequest {
+  int32 world_cup_year = 1;
+  PaginationRequest pagination = 2;
+  repeated FilterOptions filters = 3;
+  SortOptions sort = 4;
+}
+
+message GetTeamByIdRequest {
+  int32 id = 1;
+}
+
+message CreateTeamRequest {
+  int32 world_cup_year = 1;
+  string name = 2;
+  string group = 3;
+}
+
+message TeamsResponse {
+  repeated Team teams = 1;
+  int32 total_count = 2;
+}
+
+service TeamService {
+  rpc GetTeams(GetTeamsRequest) returns (TeamsResponse);
+  rpc GetTeamById(GetTeamByIdRequest) returns (Team);
+  rpc CreateTeam(CreateTeamRequest) returns (Team);
+} 

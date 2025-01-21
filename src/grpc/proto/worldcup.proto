@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package worldcup;
+
+import "common.proto";
+
+message WorldCup {
+  int32 year = 1;
+  string host = 2;
+}
+
+message GetWorldCupsRequest {
+  PaginationRequest pagination = 1;
+  repeated FilterOptions filters = 2;
+  SortOptions sort = 3;
+}
+
+message GetWorldCupByYearRequest {
+  int32 year = 1;
+}
+
+message CreateWorldCupRequest {
+  int32 year = 1;
+  string host = 2;
+}
+
+message WorldCupsResponse {
+  repeated WorldCup world_cups = 1;
+  int32 total_count = 2;
+}
+
+service WorldCupService {
+  rpc GetWorldCups(GetWorldCupsRequest) returns (WorldCupsResponse);
+  rpc GetWorldCupByYear(GetWorldCupByYearRequest) returns (WorldCup);
+  rpc CreateWorldCup(CreateWorldCupRequest) returns (WorldCup);
+} 

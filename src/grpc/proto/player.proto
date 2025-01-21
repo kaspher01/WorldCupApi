@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package worldcup;
+
+import "common.proto";
+
+message Player {
+  int32 id = 1;
+  string name = 2;
+  string position = 3;
+  int32 age = 4;
+  string club = 5;
+}
+
+message GetPlayersRequest {
+  int32 team_id = 1;
+  PaginationRequest pagination = 2;
+  repeated FilterOptions filters = 3;
+  SortOptions sort = 4;
+}
+
+message GetPlayerByIdRequest {
+  int32 id = 1;
+}
+
+message CreatePlayerRequest {
+  int32 team_id = 1;
+  string name = 2;
+  string position = 3;
+  int32 age = 4;
+  string club = 5;
+}
+
+message PlayersResponse {
+  repeated Player players = 1;
+  int32 total_count = 2;
+}
+
+service PlayerService {
+  rpc GetPlayers(GetPlayersRequest) returns (PlayersResponse);
+  rpc GetPlayerById(GetPlayerByIdRequest) returns (Player);
+  rpc CreatePlayer(CreatePlayerRequest) returns (Player);
+} 
